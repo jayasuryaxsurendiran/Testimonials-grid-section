@@ -1,0 +1,145 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #edf2f8;
+    font-family: 'Barlow semi condensed', sans-serif;
+    line-height: 1.7;
+    font-size: 13px;    
+}
+
+/* styling grid container */
+.testimonials {
+    max-width: 1440px;
+    margin: 20px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:30px;
+    grid-template-areas: 
+    "daniel daniel jonathan kira"
+    "jenette patrick patrick kira";
+}
+
+
+/* styling cards */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    margin-bottom: 10px;
+}
+
+.card_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.card_header h3 {
+    font-size: 15px;
+}
+
+.card_header p {
+    opacity: 50%;
+}
+
+.card_img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #996ed9;
+    margin-right: 10px;
+}
+
+.card_lead {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.card_quote {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    opacity: 70%;
+}
+
+/* styling a particular card inside the testimonial grid container */
+.card-bg-purple {
+    background:hsl(263, 55%, 52%);
+    color: #fff;
+    background-image: url('images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: top 10px right 100px;
+}
+
+.card-bg-gray-blue {
+    background:hsl(217, 19%, 35%);
+    color: #fff;
+}
+
+.card-bg-black-blue {
+    background: hsl(219, 29%, 14%);
+    color: #fff;
+}
+
+.card-bg-white {
+background: hsl(0, 0%, 100%)
+    
+}
+
+/* codes for aligning items using GRID AREA(GRID TEMPLEATE ARE) */
+.card-bg-purple {
+    grid-area: daniel;
+}
+
+
+.card-bg-gray-blue {
+    grid-area: jonathan;
+}
+
+.card-bg-white-jenette {
+    grid-area: jenette;
+}
+
+.card-bg-black-blue {
+   grid-area: patrick;
+}
+
+.card-bg-white-kira {
+    grid-area: kira;
+}
+
+/* code for mobile platforms using media query */
+
+@media(max-width:767px) {
+    .testimonials {
+        /*  Modify grid layout for smaller screens  */
+        grid-template-columns: 1fr;
+        width: 100%;
+        grid-template-areas: 
+        "daniel"
+        "jonathan"
+        "jenette"
+        "patrick"
+        "kira";
+    }
+}
+
+/* code for footer */
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+ 
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
